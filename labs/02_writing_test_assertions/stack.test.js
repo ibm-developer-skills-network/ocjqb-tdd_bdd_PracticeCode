@@ -1,55 +1,29 @@
 const Stack = require('./stack');
 
-class TestStack {
-    /**
-     * Test cases for Stack
-     */
-    
-    constructor() {
-        this.stack = null;
-    }
+describe('Stack', () => {
+  let stack;
 
-    setUp() {
-        /**
-         * Setup before each test
-         */
-        this.stack = new Stack();
-    }
+  beforeEach(() => {
+    // Setup before each test
+    stack = new Stack();
+  });
 
-    tearDown() {
-        /**
-         * Tear down after each test
-         */
-        this.stack = null;
-    }
+  afterEach(() => {
+    // Tear down after each test
+    stack = null;
+  });
 
-    testPush() {
-        /**
-         * Test pushing an item into the stack
-         */
-        throw new Error("not implemented");
-    }
+  test.todo('push should add an item to the stack');
 
-    testPop() {
-        /**
-         * Test popping an item off the stack
-         */
-        throw new Error("not implemented");
-    }
+  test.todo('pop should remove and return the top item from the stack');
 
-    testPeek() {
-        /**
-         * Test peeking at the top of the stack
-         */
-        throw new Error("not implemented");
-    }
+  test.todo('peek should return the top item without removing it');
 
-    testIsEmpty() {
-        /**
-         * Test if the stack is empty
-         */
-        throw new Error("not implemented");
-    }
-}
+  test.todo('isEmpty should return true when stack is empty');
 
-module.exports = TestStack;
+  test.todo('isEmpty should return false when stack has items');
+
+  test.todo('pop should return undefined when stack is empty');
+
+  test.todo('peek should return undefined when stack is empty');
+});
