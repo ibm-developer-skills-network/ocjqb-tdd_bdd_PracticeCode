@@ -4,6 +4,7 @@ module.exports = {
   coverageDirectory: "coverage",
   coveragePathIgnorePatterns: ["/node_modules/"],
   testEnvironment: "node",
+  testMatch: ['**/*.test.js'],
   coverageThreshold: {
     global: {
       lines: 100,
