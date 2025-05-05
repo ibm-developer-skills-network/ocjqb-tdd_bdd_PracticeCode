@@ -1,0 +1,22 @@
+{
+  "name": "writing-test-assertions-lab",
+  "version": "1.0.0",
+  "description": "Writing test assertions lab",
+  "main": "stack.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:verbose": "jest --coverage --verbose",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "tdd",
+    "testing",
+    "assertions",
+    "stack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
