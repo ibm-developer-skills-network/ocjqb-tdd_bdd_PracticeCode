@@ -1,0 +1,14 @@
+{
+    "name": "triangle-js",
+    "version": "1.0.0",
+    "description": "Triangle area calculator with Jest tests",
+    "main": "triangle.js",
+    "scripts": {
+      "test": "jest",
+      "lint": "eslint *.js"
+    },
+    "devDependencies": {
+      "jest": "^29.7.0",
+      "eslint": "^8.56.0"
+    }
+  }
