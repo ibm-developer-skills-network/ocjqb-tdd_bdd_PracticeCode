@@ -38,7 +38,10 @@ describe('Account Model Tests', () => {
   //////////////////////////////////////////////////////////////////////////
   //  T E S T   C A S E S
   //////////////////////////////////////////////////////////////////////////
-
+ // Placeholder test to prevent Jest from failing when no tests are present
+ test('Placeholder test - will be replaced with actual tests later', () => {
+    expect(true).toBe(true);
+  });
   // Your test cases will go here in Steps 3 and 4
 
 });
