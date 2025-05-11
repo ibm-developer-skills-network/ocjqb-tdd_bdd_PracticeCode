@@ -106,4 +106,104 @@ describe('Account Model Tests', () => {
     accounts = await Account.all();
     expect(accounts.length).toBe(0);
   });
+
+  // Additional tests for error handling and edge cases to achieve 100% coverage
+  test('Test error handling in create method', async () => {
+    // Mock the database prepare method to simulate an error
+    const originalPrepare = db.prepare;
+    db.prepare = jest.fn(() => {
+      return {
+        run: (name, email, phone, disabled, date, callback) => {
+          callback(new Error('Database error'));
+        },
+        finalize: jest.fn()
+      };
+    });
+
+    const account = new Account(ACCOUNT_DATA[0]);
+    await expect(account.create()).rejects.toThrow('Database error');
+
+    // Restore the original method
+    db.prepare = originalPrepare;
+  });
+
+  test('Test error handling in update method', async () => {
+    // Mock the database prepare method to simulate an error
+    const originalPrepare = db.prepare;
+    db.prepare = jest.fn(() => {
+      return {
+        run: (name, email, phone, disabled, date, id, callback) => {
+          callback(new Error('Database error'));
+        },
+        finalize: jest.fn()
+      };
+    });
+
+    const account = new Account(ACCOUNT_DATA[0]);
+    account.id = 1; // Set ID to avoid validation error
+    await expect(account.update()).rejects.toThrow('Database error');
+
+    // Restore the original method
+    db.prepare = originalPrepare;
+  });
+
+  test('Test error handling in delete method', async () => {
+    // Mock the database prepare method to simulate an error
+    const originalPrepare = db.prepare;
+    db.prepare = jest.fn(() => {
+      return {
+        run: (id, callback) => {
+          callback(new Error('Database error'));
+        },
+        finalize: jest.fn()
+      };
+    });
+
+    const account = new Account(ACCOUNT_DATA[0]);
+    account.id = 1; // Set ID to avoid validation error
+    await expect(account.delete()).rejects.toThrow('Database error');
+
+    // Restore the original method
+    db.prepare = originalPrepare;
+  });
+
+  test('Test error handling in all method', async () => {
+    // Mock the database all method to simulate an error
+    const originalAll = db.all;
+    db.all = jest.fn((query, callback) => {
+      callback(new Error('Database error'), null);
+    });
+
+    await expect(Account.all()).rejects.toThrow('Database error');
+
+    // Restore the original method
+    db.all = originalAll;
+  });
+
+  test('Test error handling in find method', async () => {
+    // Mock the database get method to simulate an error
+    const originalGet = db.get;
+    db.get = jest.fn((query, params, callback) => {
+      callback(new Error('Database error'), null);
+    });
+
+    await expect(Account.find(1)).rejects.toThrow('Database error');
+
+    // Restore the original method
+    db.get = originalGet;
+  });
+
+  test('Test find method with non-existent ID', async () => {
+    // Mock the database get method to return null (no record found)
+    const originalGet = db.get;
+    db.get = jest.fn((query, params, callback) => {
+      callback(null, null);
+    });
+
+    const result = await Account.find(999);
+    expect(result).toBeNull();
+
+    // Restore the original method
+    db.get = originalGet;
+  });
 });

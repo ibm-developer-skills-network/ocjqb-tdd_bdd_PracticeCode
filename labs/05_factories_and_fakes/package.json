@@ -4,7 +4,7 @@
   "description": "Node.js testing with factories and fakes",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "sqlite3": "^5.1.6"
