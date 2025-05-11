@@ -1,4 +1,64 @@
 {
+  "GOOD_SEARCH": {
+    "searchType": "Title",
+    "expression": "Bambi",
+    "results": [
+      {
+        "id": "tt1375666",
+        "resultType": "Title",
+        "image": "https://imdb-api.com/images/original/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_Ratio0.6800_AL_.jpg",
+        "title": "Inception",
+        "description": "2010 Leonardo DiCaprio, Joseph Gordon-Levitt"
+      },
+      {
+        "id": "tt0068646",
+        "resultType": "Title",
+        "image": "https://imdb-api.com/images/original/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.7273_AL_.jpg",
+        "title": "The Godfather",
+        "description": "1972 Marlon Brando, Al Pacino"
+      }
+    ],
+    "errorMessage": null
+  },
+  "BAD_SEARCH": {
+    "searchType": "Title",
+    "expression": "Invalid Title",
+    "results": [],
+    "errorMessage": "Invalid API Key"
+  },
+  "GOOD_REVIEWS": {
+    "imDbId": "tt1375666",
+    "title": "Inception",
+    "fullTitle": "Inception (2010)",
+    "type": "Movie",
+    "year": "2010",
+    "items": [
+      {
+        "username": "user1",
+        "userUrl": "https://imdb.com/user/user1",
+        "reviewLink": "https://imdb.com/review/rw1234567",
+        "warningSpoilers": false,
+        "date": "2010-07-16",
+        "rate": "9",
+        "title": "A mind-bending masterpiece",
+        "content": "This movie is a masterpiece of storytelling and visual effects."
+      }
+    ],
+    "errorMessage": null
+  },
+  "GOOD_RATINGS": {
+    "imDbId": "tt1375666",
+    "title": "Inception",
+    "fullTitle": "Inception (2010)",
+    "type": "Movie",
+    "year": "2010",
+    "imDb": "8.8",
+    "metacritic": "74",
+    "theMovieDb": "8.3",
+    "rottenTomatoes": "87",
+    "filmAffinity": "8.0",
+    "errorMessage": null
+  },
   "searchResults": {
     "results": [
       {
