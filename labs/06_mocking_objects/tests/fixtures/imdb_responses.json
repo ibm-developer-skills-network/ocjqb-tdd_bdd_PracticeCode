@@ -1,0 +1,73 @@
+{
+  "searchResults": {
+    "results": [
+      {
+        "id": "tt0111161",
+        "title": "The Shawshank Redemption",
+        "year": 1994,
+        "rating": 9.3,
+        "genres": ["Drama"]
+      },
+      {
+        "id": "tt0068646",
+        "title": "The Godfather",
+        "year": 1972,
+        "rating": 9.2,
+        "genres": ["Crime", "Drama"]
+      },
+      {
+        "id": "tt0071562",
+        "title": "The Godfather: Part II",
+        "year": 1974,
+        "rating": 9.0,
+        "genres": ["Crime", "Drama"]
+      }
+    ]
+  },
+  "movieDetails": {
+    "id": "tt0111161",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "rating": 9.3,
+    "genres": ["Drama"],
+    "director": "Frank Darabont",
+    "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+    "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "runtime": 142,
+    "language": "English"
+  },
+  "topRatedMovies": {
+    "movies": [
+      {
+        "id": "tt0111161",
+        "title": "The Shawshank Redemption",
+        "year": 1994,
+        "rating": 9.3
+      },
+      {
+        "id": "tt0068646",
+        "title": "The Godfather",
+        "year": 1972,
+        "rating": 9.2
+      },
+      {
+        "id": "tt0071562",
+        "title": "The Godfather: Part II",
+        "year": 1974,
+        "rating": 9.0
+      },
+      {
+        "id": "tt0468569",
+        "title": "The Dark Knight",
+        "year": 2008,
+        "rating": 9.0
+      },
+      {
+        "id": "tt0050083",
+        "title": "12 Angry Men",
+        "year": 1957,
+        "rating": 8.9
+      }
+    ]
+  }
+}
