@@ -1,0 +1,16 @@
+{
+  "name": "test-coverage-lab",
+  "version": "1.0.0",
+  "description": "Lab for learning test coverage in JavaScript using Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "eslint": "^8.1.0"
+  }
+}
