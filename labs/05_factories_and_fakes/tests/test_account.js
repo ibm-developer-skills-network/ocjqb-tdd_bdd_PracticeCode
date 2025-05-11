@@ -84,6 +84,78 @@ describe('Account Model Tests', () => {
     expect(found.name).toBe(account.name);
   });
 
+  test('Test Account update with null date_joined', async () => {
+    const data = ACCOUNT_DATA[0];
+    const account = new Account(data);
+    // Create the account and store the returned object which should have the ID set
+    const createdAccount = await account.create();
+    // Set the ID from the created account
+    account.id = createdAccount.id;
+    // Set date_joined to null to cover the branch
+    account.date_joined = null;
+    // Change the name
+    account.name = 'Updated Name';
+    await account.update();
+    // Find the account by ID
+    const foundAccount = await Account.find(account.id);
+    expect(foundAccount.name).toBe('Updated Name');
+    expect(foundAccount.date_joined).toBeNull();
+  });
+
+  test('Test Account update with undefined date_joined', async () => {
+    const data = ACCOUNT_DATA[0];
+    const account = new Account(data);
+    // Create the account and store the returned object which should have the ID set
+    const createdAccount = await account.create();
+    // Set the ID from the created account
+    account.id = createdAccount.id;
+    // Set date_joined to undefined to cover the branch
+    account.date_joined = undefined;
+    // Change the name
+    account.name = 'Undefined Date';
+    await account.update();
+    // Find the account by ID
+    const foundAccount = await Account.find(account.id);
+    expect(foundAccount.name).toBe('Undefined Date');
+  });
+
+  test('Test branch coverage for date_joined parameter in update method', async () => {
+    // Mock the database prepare method to track parameters
+    const originalPrepare = db.prepare;
+    let dateJoinedParam;
+    
+    db.prepare = jest.fn(() => {
+      return {
+        run: (name, email, phone, disabled, date_joined, id, callback) => {
+          // Store the date_joined parameter for assertion
+          dateJoinedParam = date_joined;
+          callback(null);
+        },
+        finalize: jest.fn()
+      };
+    });
+
+    // Test with a custom date string
+    const account = new Account({
+      name: 'Test User',
+      email: 'test@example.com',
+      phone_number: '123-456-7890',
+      disabled: false,
+      date_joined: '2023-01-01'
+    });
+    account.id = 999;
+    await account.update();
+    expect(dateJoinedParam).toBe('2023-01-01');
+
+    // Test with a null date
+    account.date_joined = null;
+    await account.update();
+    expect(dateJoinedParam).toBeNull();
+
+    // Restore the original method
+    db.prepare = originalPrepare;
+  });
+
   test('Test invalid ID update', async () => {
     const data = ACCOUNT_DATA[0];
     const account = new Account(data);

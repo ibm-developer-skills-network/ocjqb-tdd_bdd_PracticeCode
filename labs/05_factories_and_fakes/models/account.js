@@ -76,12 +76,20 @@ class Account {
       const stmt = db.prepare(
         'UPDATE accounts SET name = ?, email = ?, phone_number = ?, disabled = ?, date_joined = ? WHERE id = ?'
       );
+      // Make the branch condition more explicit for date_joined parameter
+      let dateJoined;
+      if (this.date_joined !== undefined) {
+        dateJoined = this.date_joined;
+      } else {
+        dateJoined = null;
+      }
+      
       stmt.run(
         this.name,
         this.email,
         this.phone_number,
         this.disabled ? 1 : 0,
-        this.date_joined,
+        dateJoined,
         this.id,
         function(err) {
           if (err) {
