@@ -15,6 +15,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": ["**/tests/**/test_account.js"]
+    "testMatch": ["**/tests/**/test_account.js"],
+    "collectCoverageFrom": [
+        "models/**/account.js"
+      ]
   }
 }
