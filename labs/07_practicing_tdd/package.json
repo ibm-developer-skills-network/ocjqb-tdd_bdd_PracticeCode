@@ -1,0 +1,21 @@
+{
+  "name": "counter-tdd-lab",
+  "version": "1.0.0",
+  "description": "Test Driven Development lab using Jest",
+  "main": "src/counter.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
