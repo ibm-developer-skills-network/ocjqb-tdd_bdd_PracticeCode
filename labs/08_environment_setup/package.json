@@ -1,27 +1,23 @@
 {
-  "name": "environment-setup",
+  "name": "environment-setup-lab",
   "version": "1.0.0",
-  "description": "Environment setup for BDD testing with Cucumber",
+  "description": "BDD Environment Setup Lab with Cucumber and Jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "cucumber": "cucumber-js"
+    "test": "npx cucumber-js",
+    "test:jest": "jest",
+    "cucumber": "npx cucumber-js"
   },
-  "keywords": [
-    "bdd",
-    "cucumber",
-    "testing"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@cucumber/cucumber": "^10.0.1",
-    "chai": "^4.3.10"
-  },
+  "keywords": ["bdd", "cucumber", "jest", "testing"],
+  "author": "IBM Developer Skills Network",
+  "license": "MIT",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@cucumber/cucumber": "^10.0.0",
+    "selenium-webdriver": "^4.15.0",
+    "jest": "^29.5.0",
+    "chromedriver": "^118.0.0"
   },
-  "peerDependencies": {
-    "puppeteer": "^22.8.2"
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

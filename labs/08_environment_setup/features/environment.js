@@ -1,53 +1,14 @@
-const puppeteer = require('puppeteer');
+// Environment for Cucumber Testing
+const { Before, After, BeforeAll, AfterAll } = require('@cucumber/cucumber');
+const { Builder, By, until } = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
 
-// Store the browser and page objects globally for reuse
-let browser;
-let page;
+// Export an empty object for now - we'll populate it with environment variables
+const environment = {};
 
-// Before all scenarios in a feature
-const BeforeAll = async function() {
-  // Launch the browser
-  browser = await puppeteer.launch({
-    headless: false, // Set to true for headless mode
-    slowMo: 50, // Slow down operations by 50ms
-    defaultViewport: { width: 1280, height: 800 }
-  });
-};
+BeforeAll(function() {
+    // Executed once before all tests
+});
 
-// Before each scenario
-const Before = async function() {
-  // Create a new page for each scenario
-  page = await browser.newPage();
-  
-  // Set timeout for navigation
-  await page.setDefaultNavigationTimeout(60000);
-  
-  // Make page and browser available to step definitions
-  this.page = page;
-  this.browser = browser;
-};
-
-// After each scenario
-const After = async function() {
-  // Close the page
-  if (page) {
-    await page.close();
-    page = null;
-  }
-};
-
-// After all scenarios in a feature
-const AfterAll = async function() {
-  // Close the browser
-  if (browser) {
-    await browser.close();
-    browser = null;
-  }
-};
-
-module.exports = {
-  BeforeAll,
-  Before,
-  After,
-  AfterAll
-};
+// Export the environment object so it can be imported by step definitions
+module.exports = environment;
