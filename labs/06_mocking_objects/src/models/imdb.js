@@ -27,7 +27,7 @@ class IMDb {
         return response.data;
       }
     } catch (error) {
-      console.error("Error searching titles:", error.message);
+      console.error("Error searching titles:", error?.message || 'Unknown error');
     }
     return {};
   }
@@ -45,7 +45,7 @@ class IMDb {
         return response.data;
       }
     } catch (error) {
-      console.error("Error getting movie reviews:", error.message);
+      console.error("Error getting movie reviews:", error?.message || 'Unknown error');
     }
     return {};
   }
@@ -63,7 +63,7 @@ class IMDb {
         return response.data;
       }
     } catch (error) {
-      console.error("Error getting movie ratings:", error.message);
+      console.error("Error getting movie ratings:", error?.message || 'Unknown error');
     }
     return {};
   }
