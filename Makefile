@@ -1,4 +1,4 @@
-# Builds an environment for Behave and Selenium
+# Builds an environment for BDD Testing with JavaScript
 
 .PHONY: all help bdd app
 
@@ -10,7 +10,7 @@ all: help
 bdd: ## Install pre-requisite software for BDD
 	$(info Install BDD prerequisite software...)
 	sudo apt-get update
-	sudo apt-get install -y sqlite3 chromium-driver python3-selenium
+	sudo apt-get install -y sqlite3 firefox-esr nodejs npm
  
 app: ## Run the BDD application
 	$(info Running BDD Application...)

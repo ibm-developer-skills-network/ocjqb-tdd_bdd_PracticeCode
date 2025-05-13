@@ -1,0 +1,19 @@
+{
+  "name": "bdd-testing-lab",
+  "version": "1.0.0",
+  "description": "BDD testing lab with Jest, Selenium, and Cucumber",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:jest": "jest",
+    "setup": "./bin/setup.sh"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^9.5.1",
+    "selenium-webdriver": "^4.15.0",
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@types/selenium-webdriver": "^4.1.20"
+  }
+}
