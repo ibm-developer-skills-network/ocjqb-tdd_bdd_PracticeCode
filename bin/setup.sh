@@ -3,9 +3,6 @@ echo "****************************************"
 echo " Setting up JavaScript BDD Environment"
 echo "****************************************"
 
-echo "Installing Node.js dependencies..."
-npm install
-
 echo "Making setup.sh executable..."
 chmod +x bin/setup.sh
 
