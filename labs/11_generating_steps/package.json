@@ -1,0 +1,25 @@
+{
+  "name": "bdd-cucumber-lab",
+  "version": "1.0.0",
+  "description": "BDD testing with Cucumber and Selenium WebDriver",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:dry": "cucumber-js --dry-run"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "selenium-webdriver": "^4.19.0",
+    "axios": "^1.6.8"
+  },
+  "devDependencies": {},
+  "cucumber": {
+    "require": [
+      "features/step_definitions/**/*.js",
+      "features/support/**/*.js"
+    ],
+    "format": [
+      "pretty"
+    ]
+  }
+}
