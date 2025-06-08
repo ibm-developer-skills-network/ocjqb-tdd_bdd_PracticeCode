@@ -1,0 +1,35 @@
+{
+  "name": "bdd-selenium-lab",
+  "version": "1.0.0",
+  "description": "BDD testing with Cucumber.js and Selenium WebDriver",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:debug": "cucumber-js --tags @debug"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "selenium-webdriver": "^4.15.0",
+    "axios": "^1.6.0"
+  },
+  "cucumber": {
+    "require": [
+      "features/support/**/*.js",
+      "features/step_definitions/**/*.js"
+    ],
+    "format": [
+      "progress"
+    ],
+    "paths": [
+      "features/*.feature"
+    ]
+  },
+  "keywords": [
+    "bdd",
+    "cucumber",
+    "selenium",
+    "testing"
+  ],
+  "author": "IBM Developer Skills Network",
+  "license": "Apache-2.0"
+}
